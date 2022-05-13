@@ -1,6 +1,6 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
-<div class=" bg-gradient-to-b from-yellow-100 overflow-hidden">
+<div class=" bg-gradient-to-b from-amber-100 overflow-hidden">
   <div class="">
       <main class="mt-19 mx-auto px-4 sm:mt-12 sm:px-6 md:mt-19 lg:mt-25 lg:px-8 xl:mt-28">
         <div class="sm:text-center lg:text-left">

@@ -1,27 +1,27 @@
 <template>
-    <nav class="flex items-center justify-between flex-wrap bg-white p-2">
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <nav class="flex items-center justify-between flex-wrap p-2">
+    <div class="flex items-center warna flex-shrink-0 text-white mr-6">
         <img class="fill-current ml-4 h-10 w-10 mr-2" src="../assets/logo.png" alt="">
-        <span class="font-black text-sm tracking-tight text-amber-400">Uangsaku</span>
+        <span class="font-black text-sm  warna tracking-tight font-medium text-amber-500">Uangsaku</span>
     </div>
     <div>
-        <div class="text-sm mr-5 mb-2 lg:flex-grow">
-        <router-link to="/" class="block mt-4 lg:inline-block lg:mt-0 text-amber-400 hover:underline mr-4">
+        <div class="text-sm mr-5 lg:flex-grow">
+        <router-link to="/" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
             Beranda
         </router-link>
-        <router-link to="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 text-amber-400 hover:underline mr-4">
+        <router-link to="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
             Dashboard
         </router-link>
-        <router-link to="/about" class="block mt-4 lg:inline-block lg:mt-0 text-amber-400 hover:underline mr-4">
+        <router-link to="/about" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
             Transaksi
         </router-link>
         <!-- <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-amber-500 hover:bg-white mt-4 lg:mt-0">Download</a> -->
-        <button
+        <!-- <button
             id="navAction"
             class="mx-auto hover:underline bg-yellow-100 text-amber-400 rounded-full lg:mt-0 py-1 px-6 pl-1 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
           >
           <img class="w-5 h-5 mr-3 ml-1 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-          </button>
+          </button> -->
         </div>
     </div>
     </nav>
@@ -33,6 +33,12 @@ name: 'NavbarMain'
 }
 </script>
 
-<style>
+<style scope>
+nav{
+    background-color: #fcf9f4;
+}
+.warna{
+    background-color: #fcf9f4;
 
+}
 </style>
