@@ -35,7 +35,7 @@
       <h1 class="text-2xl text-amber-600 font-bold leading-tight mb-2 capitalize">________________</h1>
     </div>
     <div class="flex justify-center pt-10 ">
-      <FilmBeranda/>
+      <FilmApi/>
     </div>
   </div>
   <footer>
@@ -46,12 +46,12 @@
 
 <script>
 import FooterMain from '@/components/FooterMain.vue';
-import FilmBeranda from '@/components/FilmBeranda.vue';
+import FilmApi from '@/components/FilmApi.vue';
 // @ is an alias to /src
 
 export default {
     name: "HomeView",
-    components: { FooterMain, FilmBeranda }
+    components: { FooterMain, FilmApi }
 }
 </script>
 
