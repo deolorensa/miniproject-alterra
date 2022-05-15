@@ -31,7 +31,7 @@
   </div>
   <div class="py-28 bg-gradient-to-b from-yellow-50">
     <div class="text-center">
-      <h1 class="text-3xl text-amber-600 font-bold leading-tight mb-2 capitalize">Suka film ? Yuk tonton Film Tetang Uang !</h1>
+      <h1 class="text-3xl text-amber-600 font-bold leading-tight mb-2 capitalize">Suka film ? Yuk tonton Film Tentang Uang !</h1>
       <h1 class="text-2xl text-amber-600 font-bold leading-tight mb-2 capitalize">________________</h1>
     </div>
     <div class="flex justify-center pt-10 ">

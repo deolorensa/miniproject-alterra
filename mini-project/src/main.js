@@ -7,8 +7,13 @@ import './index.css'
 import 'flowbite';
 import VueApollo from 'vue-apollo'
 import ApolloClient from 'apollo-boost'
+import VueSweetalert2 from 'vue-sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+
 
 Vue.use(VueApollo)
+Vue.use(VueSweetalert2);
 
 
 Vue.config.productionTip = false

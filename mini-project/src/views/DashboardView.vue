@@ -6,15 +6,15 @@
     <div class="flex flex-row justify-center mx-9 p-5 ">
         <div class="basis-1/3 mx-4 block m-3 p-6 bg-amber-200 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <p class="mb-2 text-xl font-bold tracking-tight text-yellow-700 dark:text-white">Sisa Saldo</p>
-            <p class="font-normal text-yellow-700 dark:text-gray-400">Rp. 10.000.000.000</p>
+            <p class="font-normal text-yellow-700 dark:text-gray-400">Rp. {{ totalPemasukan - totalPengeluaran }}  </p>
         </div>
         <div class="basis-1/3 mx-4 block m-3 p-6  bg-green-200 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-green-900 dark:text-white">Total Pemasukan</h5>
-            <p class="font-normal text-green-700 dark:text-gray-400">+ Rp.  </p>
+            <p class="font-normal text-green-700 dark:text-gray-400">+ Rp. {{ totalPemasukan }} </p>
         </div>
         <div class="basis-1/3 mx-4 block m-3 p-6  bg-red-200 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-red-900 dark:text-white">Total Pengeluaran</h5>
-            <p class="font-normal text-red-700 dark:text-gray-400">- Rp. </p>
+            <p class="font-normal text-red-700 dark:text-gray-400">- Rp. {{ totalPengeluaran }}</p>
         </div>
         <!-- <div class="basis-1/4 mx-4 block m-3 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">Sudah transaksi apa Hari ini ?</h5>
@@ -42,7 +42,12 @@ import gql from 'graphql-tag'
 import FooterMain from "@/components/FooterMain.vue"
 import TableExpenditure from "@/components/TableExpenditure.vue"
 import TableIncome from "@/components/TableIncome.vue"
+
 export default {
+    data: () => ({
+        totalPemasukan: 0,
+        totalPengeluaran: 0,
+    }), 
     apollo: {
         // Query with parameters
         sumExpenditures: {
@@ -58,6 +63,9 @@ export default {
             }
         }
         `,
+        result ({ data}) {
+        this.totalPengeluaran = data.expenditures_aggregate.aggregate.sum.nominal
+        },
         },
         sumIncomes: {
             query: gql`
@@ -71,15 +79,15 @@ export default {
             }
         }
         `,
+        result ({ data}) {
+        this.totalPemasukan = data.incomes_aggregate.aggregate.sum.nominal
+        },
         },
     },
     components:{
     FooterMain,
     TableExpenditure,
     TableIncome,
-    },
-    mounted() {
-        console.log(this.incomes)
     },
 }
 </script>
