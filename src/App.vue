@@ -11,7 +11,10 @@
 <script>
 import NavbarMain from "./components/NavbarMain.vue";
 export default {
-    components: { NavbarMain }
+    components: { NavbarMain },
+    mounted: function () {
+      document.title = "Uang Saku";
+      },
 }
 </script>
 

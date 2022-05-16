@@ -66,6 +66,26 @@ export default {
         result ({ data}) {
         this.totalPengeluaran = data.expenditures_aggregate.aggregate.sum.nominal
         },
+        subscribeToMore: {
+        document: gql`
+          subscription sumExpenditures {
+            expenditures_aggregate {
+                aggregate {
+                sum {
+                    nominal
+                }
+                }
+            }
+        }
+        `,
+        updateQuery: (previousResult, { subscriptionData }) => {
+          console.log(previousResult);
+          console.log(subscriptionData);
+          return {
+            sumExpend: subscriptionData.data.sumExpenditures,
+          };
+        },
+        },
         },
         sumIncomes: {
             query: gql`
@@ -82,7 +102,27 @@ export default {
         result ({ data}) {
         this.totalPemasukan = data.incomes_aggregate.aggregate.sum.nominal
         },
+        subscribeToMore: {
+        document: gql`
+            subscription sumIncomes {
+            incomes_aggregate {
+                aggregate {
+                sum {
+                    nominal
+                }
+                }
+            }
+            }
+        `,
+        updateQuery: (previousResult, { subscriptionData }) => {
+          console.log(previousResult);
+          console.log(subscriptionData);
+          return {
+            totalPemasukan: subscriptionData.data.incomes_aggregate.aggregate.sum.nominal,
+          };
         },
+      },
+    },
     },
     components:{
     FooterMain,

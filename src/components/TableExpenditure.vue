@@ -164,6 +164,26 @@ export default {
             }
         `,
             // Static parameters
+        subscribeToMore: {
+        document: gql`
+          subscription getExpenditures {
+            expenditures {
+                id
+                deskripsi
+                kategori
+                nominal
+                tanggal
+            }
+            }
+        `,
+        updateQuery: (previousResult, { subscriptionData }) => {
+          console.log(previousResult);
+          console.log(subscriptionData);
+          return {
+            expenditures: subscriptionData.data.expenditures,
+          };
+        },
+      },
         },
     },
 }

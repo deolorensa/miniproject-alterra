@@ -171,7 +171,28 @@ export default {
         }
         `,
         // Static parameters
+        subscribeToMore: {
+        document: gql`
+          subscription getIncomes {
+            incomes {
+            id
+            deskripsi
+            kategori
+            nominal
+            tanggal
+        }
+        }
+        `,
+        updateQuery: (previousResult, { subscriptionData }) => {
+          console.log(previousResult);
+          console.log(subscriptionData);
+          return {
+            incomes: subscriptionData.data.incomes,
+          };
         },
+      },
+        },
+
     },
 }
 </script>

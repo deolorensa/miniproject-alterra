@@ -51,7 +51,7 @@ import FilmApi from '@/components/FilmApi.vue';
 
 export default {
     name: "HomeView",
-    components: { FooterMain, FilmApi }
+    components: { FooterMain, FilmApi },
 }
 </script>
 
