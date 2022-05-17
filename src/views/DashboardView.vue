@@ -1,8 +1,8 @@
 <template>
-<div class=" bg-gray-100 mb-9">
-    <div class="">
-        <h1 class="mx-auto ml-9 pt-6 mb-7 text-4xl font-black">Dashboard</h1>
-    </div>
+<div class="">
+    <!-- <div class="">
+        <h1 class="mx-auto ml-9 pt-6 mb-7 text-4xl font-black">Dashboard  </h1>
+    </div> -->
     <div class="flex flex-row justify-center mx-9 p-5 ">
         <div class="basis-1/3 mx-4 block m-3 p-6 bg-amber-200 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <p class="mb-2 text-xl font-bold tracking-tight text-yellow-700 dark:text-white">Sisa Saldo</p>
@@ -23,23 +23,23 @@
         </div> -->
     </div>
     <div class="flex flex-row p-5">
-        <div class="basis-1/2 mx-6 pl-8">
+        <div class="basis-1/2 mx-6 pl-8 ">
             <TableIncome/>
         </div>
-        <div class="basis-1/2 mx-6 pr-7">
+        <div class="basis-1/2 mx-6 pr-8">
             <TableExpenditure/>
         </div>
     </div>
-    <div>
+    <!-- <div>
         <FooterMain/>
-    </div>
+    </div> -->
 </div>
 </template>
 
 <script>
 //import ApexCharts from 'apexcharts'
 import gql from 'graphql-tag'
-import FooterMain from "@/components/FooterMain.vue"
+// import FooterMain from "@/components/FooterMain.vue"
 import TableExpenditure from "@/components/TableExpenditure.vue"
 import TableIncome from "@/components/TableIncome.vue"
 
@@ -66,6 +66,12 @@ export default {
         result ({ data}) {
         this.totalPengeluaran = data.expenditures_aggregate.aggregate.sum.nominal
         },
+        update (data) {
+        console.log(data, 'asd')
+        // The returned value will update
+        // the vue property 'pingMessage'
+        return data.expenditures_aggregate.aggregate.sum.nominal
+        },
         subscribeToMore: {
         document: gql`
           subscription sumExpenditures {
@@ -78,11 +84,9 @@ export default {
             }
         }
         `,
-        updateQuery: (previousResult, { subscriptionData }) => {
-          console.log(previousResult);
-          console.log(subscriptionData);
+        updateQueryExpenditures: (previousResult, { subscriptionData }) => {
           return {
-            sumExpend: subscriptionData.data.sumExpenditures,
+            sumExpenditures: subscriptionData.data.sumExpenditures
           };
         },
         },
@@ -99,33 +103,38 @@ export default {
             }
         }
         `,
+        update (data) {
+        console.log(data, 'asd')
+        // The returned value will update
+        // the vue property 'pingMessage'
+        return data.incomes_aggregate.aggregate.sum.nominal
+        },
         result ({ data}) {
         this.totalPemasukan = data.incomes_aggregate.aggregate.sum.nominal
         },
         subscribeToMore: {
         document: gql`
-            subscription sumIncomes {
-            incomes_aggregate {
-                aggregate {
-                sum {
-                    nominal
-                }
-                }
+        subscription MySubscription {
+        incomes_aggregate {
+            aggregate {
+            sum {
+                nominal
             }
             }
+        }
+        }
         `,
-        updateQuery: (previousResult, { subscriptionData }) => {
-          console.log(previousResult);
-          console.log(subscriptionData);
+        updateQueryIncomes: (previousResult, { subscriptionData }) => {
+        const newIncomes = subscriptionData.data.incomes_aggregate.aggregate.sum.nominal
           return {
-            totalPemasukan: subscriptionData.data.incomes_aggregate.aggregate.sum.nominal,
-          };
+            sumIncomes: newIncomes,
+          }
         },
       },
     },
     },
     components:{
-    FooterMain,
+    // FooterMain,
     TableExpenditure,
     TableIncome,
     },

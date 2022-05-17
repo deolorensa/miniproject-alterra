@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="py-28  bg-gradient-to-b from-amber-100">
+  <div id="beranda" class="py-28 bg-gradient-to-b from-amber-100">
     <div class="container m-auto px-6">
 
     <div class="flex justify-between items-center">
@@ -29,7 +29,16 @@
       
     </div>
   </div>
-  <div class="py-28 bg-gradient-to-b from-yellow-50">
+  <div id="catatTransaksi" class="py-28 bg-gradient-to-l from-yellow-100">
+    <div class="text-center">
+      <h1 class="text-3xl text-amber-600 font-bold leading-tight mb-2 capitalize">Catat Keuanganmu disini !</h1>
+      <h1 class="text-2xl text-amber-600 font-bold leading-tight mb-2 capitalize">________________</h1>
+    </div>
+      <div>
+      <DashboardView/>
+      </div>
+    </div>
+    <div id="film" class="py-28 bg-gradient-to-b from-yellow-50">
     <div class="text-center">
       <h1 class="text-3xl text-amber-600 font-bold leading-tight mb-2 capitalize">Suka film ? Yuk tonton Film Tentang Uang !</h1>
       <h1 class="text-2xl text-amber-600 font-bold leading-tight mb-2 capitalize">________________</h1>
@@ -47,11 +56,12 @@
 <script>
 import FooterMain from '@/components/FooterMain.vue';
 import FilmApi from '@/components/FilmApi.vue';
+import DashboardView from './DashboardView.vue';
 // @ is an alias to /src
 
 export default {
     name: "HomeView",
-    components: { FooterMain, FilmApi },
+    components: { FooterMain, FilmApi, DashboardView },
 }
 </script>
 

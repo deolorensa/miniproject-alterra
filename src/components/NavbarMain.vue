@@ -1,20 +1,20 @@
 <template>
-    <nav class="flex items-center justify-between flex-wrap p-2">
+    <nav class="flex items-center justify-between flex-wrap mx-2 p-2">
     <div class="flex items-center warna flex-shrink-0 text-white mr-6">
         <img class="fill-current ml-4 h-10 w-10 mr-2" src="../assets/logo.png" alt="">
         <span class="font-black text-sm  warna tracking-tight font-medium text-amber-500">Uangsaku</span>
     </div>
     <div>
         <div class="text-sm mr-5 lg:flex-grow">
-        <router-link to="/" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
+        <a href="#beranda" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
             Beranda
-        </router-link>
-        <router-link to="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
-            Dashboard
-        </router-link>
-        <router-link to="/about" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
-            Transaksi
-        </router-link>
+        </a>
+        <a href="#catatTransaksi" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
+            Catat Transaksi
+        </a>
+        <a href="#film" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
+            Film
+        </a>
         <!-- <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-amber-500 hover:bg-white mt-4 lg:mt-0">Download</a> -->
         <!-- <button
             id="navAction"
