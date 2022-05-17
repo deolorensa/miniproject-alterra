@@ -10,7 +10,10 @@
             Beranda
         </a>
         <a href="#catatTransaksi" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
-            Catat Transaksi
+            Transaksi
+        </a>
+        <a href="#catatan" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
+            Catatan
         </a>
         <a href="#film" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
             Film

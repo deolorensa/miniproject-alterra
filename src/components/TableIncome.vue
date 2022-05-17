@@ -85,7 +85,7 @@
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Deskripsi</label>
                             <textarea v-model="deskripsiIncome" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deskripsi pemasukan/pengeluaran..."></textarea>
                         </div>
-                        <button data-modal-toggle="input-income" type="submit" class="w-full text-white bg-yellow-400 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tambahkan</button>
+                        <button @click="inputIncomeAlert" data-modal-toggle="input-income" type="submit" class="w-full text-white bg-yellow-400 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tambahkan</button>
                     </form>
                 </div>
             </div>
@@ -105,15 +105,15 @@ export default {
         tanggalIncome: '',
     }),
     methods: {
-    showAlert() {
-      // Use sweetalert2
-    // this.$swal({
-    //     position: 'center',
-    //     icon: 'success',
-    //     title: 'Your work has been saved',
-    //     showConfirmButton: false,
-    //     timer: 1500
-    // });
+    inputIncomeAlert() {
+    //   Use sweetalert2
+    this.$swal({
+        position: 'center',
+        icon: 'success',
+        title: 'Berhasil Menambahkan Pemasukan',
+        showConfirmButton: false,
+        timer: 1500
+    });
     },
     deleteIncome(id) {
       this.$apollo.mutate({
