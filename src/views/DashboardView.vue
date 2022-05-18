@@ -67,7 +67,6 @@ export default {
         this.totalPengeluaran = data.expenditures_aggregate.aggregate.sum.nominal
         },
         update (data) {
-        console.log(data, 'asd')
         // The returned value will update
         // the vue property 'pingMessage'
         return data.expenditures_aggregate.aggregate.sum.nominal
@@ -104,7 +103,6 @@ export default {
         }
         `,
         update (data) {
-        console.log(data, 'asd')
         // The returned value will update
         // the vue property 'pingMessage'
         return data.incomes_aggregate.aggregate.sum.nominal

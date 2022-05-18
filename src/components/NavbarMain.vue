@@ -1,14 +1,14 @@
 <template>
-    <nav class="flex items-center justify-between flex-wrap mx-2 p-2">
-    <div class="flex items-center warna flex-shrink-0 text-white mr-6">
+    <nav class="flex items-center justify-between flex-wrap mx-16 p-2">
+    <a href="#beranda" class="flex items-center warna flex-shrink-0 text-white mr-6">
         <img class="fill-current ml-4 h-10 w-10 mr-2" src="../assets/logo.png" alt="">
-        <span class="font-black text-sm  warna tracking-tight font-medium text-amber-500">Uangsaku</span>
-    </div>
+        <span class="font-black text-lg  warna tracking-tight font-medium text-amber-500">Uangsaku</span>
+    </a>
     <div>
-        <div class="text-sm mr-5 lg:flex-grow">
-        <a href="#beranda" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
+        <div class="text-lg mr-5 lg:flex-grow">
+        <!-- <a href="#beranda" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
             Beranda
-        </a>
+        </a> -->
         <a href="#catatTransaksi" class="block mt-4 lg:inline-block lg:mt-0 font-medium text-amber-500 hover:underline hover:underline-offset-2 mr-4">
             Transaksi
         </a>

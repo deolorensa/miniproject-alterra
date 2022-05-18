@@ -8,7 +8,7 @@
             <button data-modal-toggle="input-note" class="text-white bg-yellow-400 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Tambahkan</button>
             </div>
         <div class="">
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-4 gap-4 mx-10">
                 <div v-for="note in notes" :key="note.id" class="w-full h-64 flex flex-col justify-between items-start bg-amber-50 rounded-lg border border-black mb-6 py-5 px-4">
                     <div>
                         <h4 class="text-gray-800 font-bold mb-3"> {{ note.judul }} </h4>
